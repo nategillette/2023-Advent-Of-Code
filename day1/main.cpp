@@ -5,8 +5,9 @@
 
 
 
-void readFile(std::fstream& file,std::vector<std::string>& inputs)
+std::vector<std::string> readFile(std::fstream& file)
 {
+	std::vector<std::string> inputs;
 	if(file.is_open())
 	{
 		std::string input;
@@ -15,19 +16,22 @@ void readFile(std::fstream& file,std::vector<std::string>& inputs)
 			inputs.push_back(input);
 		}
 	}
+
+	return inputs;
 }
 
-void convertInputs(const std::vector<std::string>& inputs, std::vector<std::string>& stringsToAdd)
+std::vector<std::string> convertInputs(const std::vector<std::string>& inputs)
 {	
+	std::vector<std::string> stringsToAdd;
+
 	for(const auto& line : inputs)
 	{
 		std::string temp{};
 		char first = '\0';
 		char second = '\0';
 		int index = 0;
-		for(int i=0; i < line.length(); i++)
+		for(uint i=0; i < line.length(); i++)
 		{
-			std::cout << line[i] << std::endl;
 			if(std::isdigit(line[i]))
 			{
 				if(index == 0)
@@ -50,6 +54,8 @@ void convertInputs(const std::vector<std::string>& inputs, std::vector<std::stri
 		temp += second;
 		stringsToAdd.push_back(temp);
 	}
+
+	return stringsToAdd;
 }
 
 int calculateTotal(const std::vector<std::string>& stringsToAdd)
@@ -71,13 +77,10 @@ int main()
 	std::fstream file;
 	file.open("input.txt", std::ios::in);
 
-	readFile(file, inputs);
-	convertInputs(inputs, stringsToAdd);
+	inputs = readFile(file);
+	stringsToAdd = convertInputs(inputs);
 	finalTotal = calculateTotal(stringsToAdd);
-	
+
 	std::cout << "The total is: " << finalTotal << std::endl;
-
-
-
 	return 0;
 }
