@@ -3,8 +3,6 @@
 #include <string>
 #include <vector>
 
-
-
 std::vector<std::string> readFile(std::fstream& file)
 {
 	std::vector<std::string> inputs;
@@ -16,7 +14,6 @@ std::vector<std::string> readFile(std::fstream& file)
 			inputs.push_back(input);
 		}
 	}
-
 	return inputs;
 }
 
@@ -43,7 +40,6 @@ std::vector<std::string> convertInputs(const std::vector<std::string>& inputs)
 					second = line[i];
 				}
 				index ++;
-
 			}
 		}
 		if(second == '\0')
@@ -54,7 +50,6 @@ std::vector<std::string> convertInputs(const std::vector<std::string>& inputs)
 		temp += second;
 		stringsToAdd.push_back(temp);
 	}
-
 	return stringsToAdd;
 }
 
@@ -66,7 +61,6 @@ int calculateTotal(const std::vector<std::string>& stringsToAdd)
 		total += std::atoi(string.c_str());
 	}
 	return total;
-
 }
 
 int main()
