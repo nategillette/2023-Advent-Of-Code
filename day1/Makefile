@@ -1,4 +1,4 @@
 main:
-	g++ -Wall -Wextra -Wpedantic -O2 main.cpp
+	g++ -Wall -Wextra -Wpedantic -O2 -o day1 main.cpp
 clean:
-	rm a.out
+	rm day1
