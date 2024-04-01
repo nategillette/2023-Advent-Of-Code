@@ -6,7 +6,7 @@ I will be using C++ for this. This is what I use at professionally, and I'm tryi
 On top of C++ I'm using:
 - gcc
 - Makefile
-- Ubuntu (well really Ubuntu in WSL2 :) )
+- Ubuntu 22.04
 
 
 # [Day 1](https://github.com/nategillette/2023-Advent-Of-Code/tree/main/day1)
