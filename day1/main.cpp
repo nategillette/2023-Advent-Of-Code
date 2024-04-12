@@ -24,8 +24,7 @@ std::vector<std::string> convertInputs(const std::vector<std::string>& inputs)
 	for(const auto& line : inputs)
 	{
 		std::string temp{};
-		char first = '\0';
-		char second = '\0';
+		char first, second = '\0';
 		int index = 0;
 		for(uint i=0; i < line.length(); i++)
 		{
@@ -46,8 +45,7 @@ std::vector<std::string> convertInputs(const std::vector<std::string>& inputs)
 		{
 			second = first;
 		}
-		temp += first;
-		temp += second;
+		temp += first + second;
 		stringsToAdd.push_back(temp);
 	}
 	return stringsToAdd;
